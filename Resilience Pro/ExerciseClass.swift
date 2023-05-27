@@ -73,9 +73,14 @@ class ExercisesViewModel: ObservableObject {
         let recordType = "Exercises"
         CloudKitUtility.fetch(predicate: predicate, recordType: recordType)
             .receive(on: DispatchQueue.main)
-            .sink { _ in
-                
-            } receiveValue: { [weak self] returnedItems in
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error: \(error)")
+                case .finished:
+                    break
+                }
+            }) { [weak self] (returnedItems: [ExerciseModel]) in
                 self?.exercises = returnedItems
                 self?.isLoaded = true
                 print(returnedItems)

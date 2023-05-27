@@ -41,5 +41,6 @@ struct ExerciseCard: View {
             .padding(.leading, 5)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.top,5)
     }
 }

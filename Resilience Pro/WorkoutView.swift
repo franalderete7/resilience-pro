@@ -109,9 +109,9 @@ struct WorkoutView: View {
                 }
             }
         }
-        .padding(.trailing, 15)
-        .padding(.leading, 15)
-        .padding(.bottom, 25)
+        .padding(.trailing, 5)
+        .padding(.leading, 5)
+        .padding(.bottom, 15)
     }
 
 

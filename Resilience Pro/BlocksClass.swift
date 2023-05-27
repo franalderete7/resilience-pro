@@ -10,7 +10,6 @@ import Combine
 
 struct CloudKitBlockModelNames {
     static let name = "name"
-    static let exercises = "exercises"
 }
 
 struct BlockModel: Hashable, CloudKitableProtocol {

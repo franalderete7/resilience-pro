@@ -17,15 +17,16 @@ struct WeekView: View {
     }
 
     var body: some View {
-        VStack(spacing: 10) {
+        ScrollView {
+            LazyVStack(alignment: .center, spacing: 15) {
                 ForEach(workoutsViewModel.workouts, id: \.self) { workout in
                     WorkoutCard(workout: workout)
                 }
+            }
+            .padding(.top, 50)
         }
-        .padding(4)
         .navigationTitle(week.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
 
