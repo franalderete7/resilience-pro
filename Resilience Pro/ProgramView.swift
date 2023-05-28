@@ -106,7 +106,7 @@ struct ProgramView: View {
         if weeksViewModel.isLoaded == false {
             ProgressView()
         } else {
-            VStack(spacing: 33) {
+            VStack(spacing: 20) {
                 ForEach(weeksViewModel.weeks, id: \.self) { week in
                     NavigationLink(destination: WeekView(week: week)) {
                         HStack(spacing: 10) {

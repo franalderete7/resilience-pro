@@ -33,6 +33,12 @@ struct BlockView: View {
                 }
             } label: {
                 Text(block.name)
+                    .fontWeight(.bold)
+                    .font(.system(size: 15))
+                Text("-  Series: \(block.sets)")
+                    .fontWeight(.bold)
+                    .font(.system(size: 15))
+    
             }
         }
         .background(.black)

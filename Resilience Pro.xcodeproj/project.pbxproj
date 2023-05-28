@@ -27,6 +27,8 @@
 		D1BD96CE2A215C370089D952 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96CD2A215C370089D952 /* BlockView.swift */; };
 		D1BF4E9A2A21B3CC00FDA918 /* ExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */; };
 		D1BF4E9C2A21B58800FDA918 /* ExerciseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF4E9B2A21B58800FDA918 /* ExerciseClass.swift */; };
+		D1C04F682A22E18300768B50 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C04F672A22E18300768B50 /* Launch Screen.storyboard */; };
+		D1C848A52A227DAC000BDC6C /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C848A42A227DAC000BDC6C /* ExerciseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,9 @@
 		D1BD96CD2A215C370089D952 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCard.swift; sourceTree = "<group>"; };
 		D1BF4E9B2A21B58800FDA918 /* ExerciseClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseClass.swift; sourceTree = "<group>"; };
+		D1C04F672A22E18300768B50 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D1C04F692A22E1DB00768B50 /* Resilience-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Resilience-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D1C848A42A227DAC000BDC6C /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,7 @@
 		D1BD96A32A2074AB0089D952 /* Resilience Pro */ = {
 			isa = PBXGroup;
 			children = (
+				D1C04F692A22E1DB00768B50 /* Resilience-Pro-Info.plist */,
 				D1BD96B22A2074BE0089D952 /* Resilience Pro.entitlements */,
 				D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */,
 				D1BD96B32A2075C20089D952 /* CloudKitUtility.swift */,
@@ -101,7 +107,9 @@
 				D1BD96CD2A215C370089D952 /* BlockView.swift */,
 				D1BF4E9B2A21B58800FDA918 /* ExerciseClass.swift */,
 				D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */,
+				D1C848A42A227DAC000BDC6C /* ExerciseView.swift */,
 				D1BD96B92A210ED20089D952 /* UserProfileView.swift */,
+				D1C04F672A22E18300768B50 /* Launch Screen.storyboard */,
 				D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */,
 				D1BD96A82A2074AC0089D952 /* Assets.xcassets */,
 				D1BD96AA2A2074AC0089D952 /* Preview Content */,
@@ -175,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C04F682A22E18300768B50 /* Launch Screen.storyboard in Resources */,
 				D1BD96AC2A2074AC0089D952 /* Preview Assets.xcassets in Resources */,
 				D1BD96A92A2074AC0089D952 /* Assets.xcassets in Resources */,
 			);
@@ -187,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C848A52A227DAC000BDC6C /* ExerciseView.swift in Sources */,
 				D1BD96CE2A215C370089D952 /* BlockView.swift in Sources */,
 				D1BD96CA2A2152920089D952 /* BlocksClass.swift in Sources */,
 				D1BD96BC2A2115560089D952 /* ProgramsClass.swift in Sources */,
@@ -330,6 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Resilience Pro/Resilience Pro.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -337,9 +348,10 @@
 				DEVELOPMENT_TEAM = WYN4MP6QF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Resilience-Pro-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Resilience Pro/Resilience Pro.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -367,9 +380,10 @@
 				DEVELOPMENT_TEAM = WYN4MP6QF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Resilience-Pro-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

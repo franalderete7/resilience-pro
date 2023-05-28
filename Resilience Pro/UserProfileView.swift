@@ -15,12 +15,12 @@ struct UserProfileView: View {
         NavigationView {
             VStack {
                 Spacer()
-                Text("Hello \(vm.userName)!")
+                Text("Hola \(vm.userName)!")
                     .font(.title)
                     .padding()
                 Spacer()
             }
-            .navigationTitle("Profile")
+            .navigationTitle("Perfil")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

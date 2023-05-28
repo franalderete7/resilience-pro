@@ -15,25 +15,29 @@ struct CloudKitBlockModelNames {
 struct BlockModel: Hashable, CloudKitableProtocol {
     let name: String
     var exercises: [CKRecord.Reference] = []
+    let sets: Int
     let record: CKRecord
 
     init?(record: CKRecord) {
         guard
             let name = record[CloudKitBlockModelNames.name] as? String,
-            let exercises = record["exercises"] as? [CKRecord.Reference]
+            let exercises = record["exercises"] as? [CKRecord.Reference],
+            let sets = record["sets"] as? Int
         else {
             return nil
         }
 
         self.name = name
         self.exercises = exercises
+        self.sets = sets
         self.record = record
     }
 
-    init?(name: String, exercises: [CKRecord.Reference]) {
+    init?(name: String, exercises: [CKRecord.Reference], sets: Int) {
         let record = CKRecord(recordType: "Blocks")
         record["name"] = name
         record["exercises"] = exercises
+        record["sets"] = sets
         self.init(record: record)
     }
 }

@@ -16,14 +16,22 @@ struct WeekView: View {
         self.workoutsViewModel = WorkoutsViewModel(workoutIDs: workoutIds)
     }
 
+    var sortedWorkouts: [WorkoutModel] {
+        workoutsViewModel.workouts.sorted { $0.name < $1.name }
+    }
+
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .center, spacing: 15) {
-                ForEach(workoutsViewModel.workouts, id: \.self) { workout in
-                    WorkoutCard(workout: workout)
+            if sortedWorkouts.isEmpty {
+                ProgressView()
+            } else {
+                LazyVStack(alignment: .center, spacing: 40) {
+                    ForEach(sortedWorkouts, id: \.self) { workout in
+                        WorkoutCard(workout: workout)
+                    }
                 }
+                .padding(.top, 50)
             }
-            .padding(.top, 50)
         }
         .navigationTitle(week.name)
         .navigationBarTitleDisplayMode(.inline)

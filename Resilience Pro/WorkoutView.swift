@@ -104,7 +104,8 @@ struct WorkoutView: View {
             if blocksViewModel.isLoaded == false {
                 ProgressView()
             } else {
-                ForEach(blocksViewModel.blocks, id: \.self) { block in
+                let sortedBlocks = blocksViewModel.blocks.sorted { $0.name < $1.name }
+                ForEach(sortedBlocks, id: \.self) { block in
                     BlockView(block: block)
                 }
             }
@@ -113,7 +114,6 @@ struct WorkoutView: View {
         .padding(.leading, 5)
         .padding(.bottom, 15)
     }
-
 
 
     @ViewBuilder
