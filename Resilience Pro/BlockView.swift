@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct BlockView: View {
-    @State private var isExpanded: Bool = true
+    @State private var isExpanded: Bool = false
     var block: BlockModel
     @ObservedObject var exercisesViewModel: ExercisesViewModel
 

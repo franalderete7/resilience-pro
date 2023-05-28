@@ -107,7 +107,7 @@ struct ProgramView: View {
             ProgressView()
         } else {
             VStack(spacing: 20) {
-                ForEach(weeksViewModel.weeks, id: \.self) { week in
+                ForEach(weeksViewModel.weeks.sorted(by: { $0.name < $1.name }), id: \.self) { week in
                     NavigationLink(destination: WeekView(week: week)) {
                         HStack(spacing: 10) {
                             Text(week.name)
@@ -131,7 +131,6 @@ struct ProgramView: View {
             }
         }
     }
-
 
 
     @ViewBuilder
