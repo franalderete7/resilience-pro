@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D12751272A2439D2004920FB /* UploadExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12751262A2439D2004920FB /* UploadExerciseView.swift */; };
 		D1BD96A52A2074AB0089D952 /* Resilience_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */; };
 		D1BD96A72A2074AB0089D952 /* UserProfileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */; };
 		D1BD96A92A2074AC0089D952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BD96A82A2074AC0089D952 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D12751262A2439D2004920FB /* UploadExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadExerciseView.swift; sourceTree = "<group>"; };
 		D1BD96A12A2074AB0089D952 /* Resilience Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resilience Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resilience_ProApp.swift; sourceTree = "<group>"; };
 		D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileClass.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */,
 				D1BD96A82A2074AC0089D952 /* Assets.xcassets */,
 				D1BD96AA2A2074AC0089D952 /* Preview Content */,
+				D12751262A2439D2004920FB /* UploadExerciseView.swift */,
 			);
 			path = "Resilience Pro";
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				D1C848A52A227DAC000BDC6C /* ExerciseView.swift in Sources */,
 				D1BD96CE2A215C370089D952 /* BlockView.swift in Sources */,
 				D1BD96CA2A2152920089D952 /* BlocksClass.swift in Sources */,
+				D12751272A2439D2004920FB /* UploadExerciseView.swift in Sources */,
 				D1BD96BC2A2115560089D952 /* ProgramsClass.swift in Sources */,
 				D1BD96B82A20FDE50089D952 /* ProgramsView.swift in Sources */,
 				D1BF4E9A2A21B3CC00FDA918 /* ExerciseCard.swift in Sources */,

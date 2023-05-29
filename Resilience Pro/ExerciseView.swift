@@ -13,6 +13,7 @@
 import SwiftUI
 import AVKit
 import CloudKit
+import UserNotifications
 
 struct ExerciseView: View {
     
