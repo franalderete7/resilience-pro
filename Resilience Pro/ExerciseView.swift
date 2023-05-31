@@ -26,6 +26,10 @@ struct ExerciseView: View {
     init(exercise: ExerciseModel, videoUrl: String) {
         self.exercise = exercise
         self.videoUrl = videoUrl
+        
+        // Set the audio session category to allow mixing with other apps
+        try? AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: .mixWithOthers)
+        try? AVAudioSession.sharedInstance().setActive(true)
     }
     
     var body: some View {
