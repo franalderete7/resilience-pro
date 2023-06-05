@@ -27,7 +27,6 @@ struct ExerciseView: View {
         self.exercise = exercise
         self.videoUrl = videoUrl
         
-        // Set the audio session category to allow mixing with other apps
         try? AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: .mixWithOthers)
         try? AVAudioSession.sharedInstance().setActive(true)
     }
@@ -91,6 +90,20 @@ struct ExerciseView: View {
                             .foregroundColor(.white)
                             .background(Color.black)
                             .cornerRadius(4)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(.top, 10)
+                    VStack(spacing: 2) {
+                        Text("Descripción")
+                            .font(.system(size: 15))
+                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Text(exercise.description.uppercased())
+                            .fontWeight(.bold)
+                            .font(.system(size: 13))
+                            .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .padding(.top, 10)

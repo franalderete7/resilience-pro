@@ -94,7 +94,7 @@ struct UploadExerciseView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Exercise Details")) {
                     TextField("Name", text: $name)

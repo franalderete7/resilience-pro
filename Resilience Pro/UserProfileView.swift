@@ -12,7 +12,7 @@ struct UserProfileView: View {
     @StateObject private var vm = UserProfile()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Spacer()
                 Text("Hola \(vm.userName)!")

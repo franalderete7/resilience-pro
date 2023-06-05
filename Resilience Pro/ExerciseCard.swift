@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ExerciseCard: View {
     var exercise: ExerciseModel
-    @State private var isShowingExerciseView = false
+    @State private var isShowingExerciseView: Bool = false
     
     var body: some View {
         HStack {

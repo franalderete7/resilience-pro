@@ -13,7 +13,8 @@ struct CloudKitExerciseModelNames {
     static let name = "name"
 }
 
-struct ExerciseModel: Hashable, CloudKitableProtocol {
+struct ExerciseModel: Hashable, Identifiable, CloudKitableProtocol {
+    let id = UUID()
     let name: String
     let description: String
     let image: CKAsset
@@ -57,7 +58,16 @@ struct ExerciseModel: Hashable, CloudKitableProtocol {
         record["rest"] = rest
         self.init(record: record)
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: ExerciseModel, rhs: ExerciseModel) -> Bool {
+        lhs.id == rhs.id
+    }
 }
+
 
 class ExercisesViewModel: ObservableObject {
     @Published var exercises: [ExerciseModel] = []

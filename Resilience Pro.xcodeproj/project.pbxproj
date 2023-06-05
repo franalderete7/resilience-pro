@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D12751272A2439D2004920FB /* UploadExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12751262A2439D2004920FB /* UploadExerciseView.swift */; };
+		D154F3C52A28B83B002600CD /* Resilience-Pro-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D154F3C42A28B83B002600CD /* Resilience-Pro-Info.plist */; };
 		D1BD96A52A2074AB0089D952 /* Resilience_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */; };
 		D1BD96A72A2074AB0089D952 /* UserProfileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */; };
 		D1BD96A92A2074AC0089D952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BD96A82A2074AC0089D952 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		D12751262A2439D2004920FB /* UploadExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadExerciseView.swift; sourceTree = "<group>"; };
+		D154F3C42A28B83B002600CD /* Resilience-Pro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Resilience-Pro-Info.plist"; sourceTree = "<group>"; };
 		D1BD96A12A2074AB0089D952 /* Resilience Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resilience Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resilience_ProApp.swift; sourceTree = "<group>"; };
 		D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileClass.swift; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCard.swift; sourceTree = "<group>"; };
 		D1BF4E9B2A21B58800FDA918 /* ExerciseClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseClass.swift; sourceTree = "<group>"; };
 		D1C04F672A22E18300768B50 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		D1C04F692A22E1DB00768B50 /* Resilience-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Resilience-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D1C848A42A227DAC000BDC6C /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +92,7 @@
 		D1BD96A32A2074AB0089D952 /* Resilience Pro */ = {
 			isa = PBXGroup;
 			children = (
-				D1C04F692A22E1DB00768B50 /* Resilience-Pro-Info.plist */,
+				D154F3C42A28B83B002600CD /* Resilience-Pro-Info.plist */,
 				D1BD96B22A2074BE0089D952 /* Resilience Pro.entitlements */,
 				D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */,
 				D1BD96B32A2075C20089D952 /* CloudKitUtility.swift */,
@@ -187,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C04F682A22E18300768B50 /* Launch Screen.storyboard in Resources */,
+				D154F3C52A28B83B002600CD /* Resilience-Pro-Info.plist in Resources */,
 				D1BD96AC2A2074AC0089D952 /* Preview Assets.xcassets in Resources */,
 				D1BD96A92A2074AC0089D952 /* Assets.xcassets in Resources */,
 			);
