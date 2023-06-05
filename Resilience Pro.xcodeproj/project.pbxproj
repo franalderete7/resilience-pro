@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D12751272A2439D2004920FB /* UploadExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12751262A2439D2004920FB /* UploadExerciseView.swift */; };
+		D140A4EF2A2E9FF50044D94E /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140A4EE2A2E9FF50044D94E /* VideoPlayer.swift */; };
+		D140A4F12A2EA0850044D94E /* ExerciseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D140A4F02A2EA0850044D94E /* ExerciseFunctions.swift */; };
 		D154F3C52A28B83B002600CD /* Resilience-Pro-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D154F3C42A28B83B002600CD /* Resilience-Pro-Info.plist */; };
 		D1BD96A52A2074AB0089D952 /* Resilience_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */; };
 		D1BD96A72A2074AB0089D952 /* UserProfileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		D12751262A2439D2004920FB /* UploadExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadExerciseView.swift; sourceTree = "<group>"; };
+		D140A4EE2A2E9FF50044D94E /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		D140A4F02A2EA0850044D94E /* ExerciseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFunctions.swift; sourceTree = "<group>"; };
 		D154F3C42A28B83B002600CD /* Resilience-Pro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Resilience-Pro-Info.plist"; sourceTree = "<group>"; };
 		D1BD96A12A2074AB0089D952 /* Resilience Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resilience Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BD96A42A2074AB0089D952 /* Resilience_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resilience_ProApp.swift; sourceTree = "<group>"; };
@@ -111,12 +115,14 @@
 				D1BF4E9B2A21B58800FDA918 /* ExerciseClass.swift */,
 				D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */,
 				D1C848A42A227DAC000BDC6C /* ExerciseView.swift */,
+				D140A4F02A2EA0850044D94E /* ExerciseFunctions.swift */,
 				D1BD96B92A210ED20089D952 /* UserProfileView.swift */,
 				D1BD96A62A2074AB0089D952 /* UserProfileClass.swift */,
+				D12751262A2439D2004920FB /* UploadExerciseView.swift */,
+				D140A4EE2A2E9FF50044D94E /* VideoPlayer.swift */,
 				D1C04F672A22E18300768B50 /* Launch Screen.storyboard */,
 				D1BD96A82A2074AC0089D952 /* Assets.xcassets */,
 				D1BD96AA2A2074AC0089D952 /* Preview Content */,
-				D12751262A2439D2004920FB /* UploadExerciseView.swift */,
 			);
 			path = "Resilience Pro";
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C848A52A227DAC000BDC6C /* ExerciseView.swift in Sources */,
+				D140A4F12A2EA0850044D94E /* ExerciseFunctions.swift in Sources */,
 				D1BD96CE2A215C370089D952 /* BlockView.swift in Sources */,
 				D1BD96CA2A2152920089D952 /* BlocksClass.swift in Sources */,
 				D12751272A2439D2004920FB /* UploadExerciseView.swift in Sources */,
@@ -215,6 +222,7 @@
 				D1BD96B62A20FD970089D952 /* MainTabView.swift in Sources */,
 				D1BD96A72A2074AB0089D952 /* UserProfileClass.swift in Sources */,
 				D1BD96B42A2075C20089D952 /* CloudKitUtility.swift in Sources */,
+				D140A4EF2A2E9FF50044D94E /* VideoPlayer.swift in Sources */,
 				D1BD96C62A214D320089D952 /* WorkoutsClass.swift in Sources */,
 				D1BD96A52A2074AB0089D952 /* Resilience_ProApp.swift in Sources */,
 				D1BD96C42A214AA90089D952 /* WeekView.swift in Sources */,
@@ -284,6 +292,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -337,6 +346,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

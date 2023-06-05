@@ -30,7 +30,7 @@ struct ProgramsView: View {
     @StateObject private var programs = ProgramsViewModel()
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(spacing: 20) {
                     if isLoading {
