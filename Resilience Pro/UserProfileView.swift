@@ -15,7 +15,7 @@ struct UserProfileView: View {
         NavigationStack {
             VStack {
                 Spacer()
-                Text("Hola \(vm.userName)!")
+                Text("Hola \(vm.givenName) \(vm.familyName)!")
                     .font(.title)
                     .padding()
                 Spacer()

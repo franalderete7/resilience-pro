@@ -81,6 +81,7 @@ class ExercisesViewModel: ObservableObject {
     func fetchItems(exerciseIDs: [CKRecord.ID]) {
         let predicate = NSPredicate(format: "recordID IN %@", exerciseIDs)
         let recordType = "Exercises"
+        
         CloudKitUtility.fetch(predicate: predicate, recordType: recordType)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -98,3 +99,4 @@ class ExercisesViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 }
+
