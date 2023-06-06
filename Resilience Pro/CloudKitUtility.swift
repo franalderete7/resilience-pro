@@ -253,5 +253,4 @@ extension CloudKitUtility {
             }
         }
     }
-    
 }
