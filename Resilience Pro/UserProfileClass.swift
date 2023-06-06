@@ -58,6 +58,5 @@ class UserProfile: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
 }
 
