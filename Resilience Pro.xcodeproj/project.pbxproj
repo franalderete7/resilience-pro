@@ -22,11 +22,9 @@
 		D1BD96BC2A2115560089D952 /* ProgramsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96BB2A2115560089D952 /* ProgramsClass.swift */; };
 		D1BD96BE2A212A420089D952 /* ProgramCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96BD2A212A420089D952 /* ProgramCard.swift */; };
 		D1BD96C02A213DBE0089D952 /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96BF2A213DBD0089D952 /* ProgramView.swift */; };
-		D1BD96C22A2143900089D952 /* WeeksClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96C12A2143900089D952 /* WeeksClass.swift */; };
 		D1BD96C42A214AA90089D952 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96C32A214AA90089D952 /* WeekView.swift */; };
 		D1BD96C62A214D320089D952 /* WorkoutsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96C52A214D320089D952 /* WorkoutsClass.swift */; };
 		D1BD96C82A2150B60089D952 /* WorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96C72A2150B60089D952 /* WorkoutCard.swift */; };
-		D1BD96CA2A2152920089D952 /* BlocksClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96C92A2152910089D952 /* BlocksClass.swift */; };
 		D1BD96CC2A2152E40089D952 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96CB2A2152E40089D952 /* WorkoutView.swift */; };
 		D1BD96CE2A215C370089D952 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BD96CD2A215C370089D952 /* BlockView.swift */; };
 		D1BF4E9A2A21B3CC00FDA918 /* ExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */; };
@@ -53,11 +51,9 @@
 		D1BD96BB2A2115560089D952 /* ProgramsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsClass.swift; sourceTree = "<group>"; };
 		D1BD96BD2A212A420089D952 /* ProgramCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramCard.swift; sourceTree = "<group>"; };
 		D1BD96BF2A213DBD0089D952 /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
-		D1BD96C12A2143900089D952 /* WeeksClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksClass.swift; sourceTree = "<group>"; };
 		D1BD96C32A214AA90089D952 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		D1BD96C52A214D320089D952 /* WorkoutsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsClass.swift; sourceTree = "<group>"; };
 		D1BD96C72A2150B60089D952 /* WorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCard.swift; sourceTree = "<group>"; };
-		D1BD96C92A2152910089D952 /* BlocksClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksClass.swift; sourceTree = "<group>"; };
 		D1BD96CB2A2152E40089D952 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		D1BD96CD2A215C370089D952 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 		D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCard.swift; sourceTree = "<group>"; };
@@ -105,12 +101,10 @@
 				D1BD96BD2A212A420089D952 /* ProgramCard.swift */,
 				D1BD96B72A20FDE40089D952 /* ProgramsView.swift */,
 				D1BD96BF2A213DBD0089D952 /* ProgramView.swift */,
-				D1BD96C12A2143900089D952 /* WeeksClass.swift */,
 				D1BD96C32A214AA90089D952 /* WeekView.swift */,
 				D1BD96C52A214D320089D952 /* WorkoutsClass.swift */,
 				D1BD96C72A2150B60089D952 /* WorkoutCard.swift */,
 				D1BD96CB2A2152E40089D952 /* WorkoutView.swift */,
-				D1BD96C92A2152910089D952 /* BlocksClass.swift */,
 				D1BD96CD2A215C370089D952 /* BlockView.swift */,
 				D1BF4E9B2A21B58800FDA918 /* ExerciseClass.swift */,
 				D1BF4E992A21B3CC00FDA918 /* ExerciseCard.swift */,
@@ -210,14 +204,12 @@
 				D1C848A52A227DAC000BDC6C /* ExerciseView.swift in Sources */,
 				D140A4F12A2EA0850044D94E /* ExerciseFunctions.swift in Sources */,
 				D1BD96CE2A215C370089D952 /* BlockView.swift in Sources */,
-				D1BD96CA2A2152920089D952 /* BlocksClass.swift in Sources */,
 				D12751272A2439D2004920FB /* UploadExerciseView.swift in Sources */,
 				D1BD96BC2A2115560089D952 /* ProgramsClass.swift in Sources */,
 				D1BD96B82A20FDE50089D952 /* ProgramsView.swift in Sources */,
 				D1BF4E9A2A21B3CC00FDA918 /* ExerciseCard.swift in Sources */,
 				D1BD96C82A2150B60089D952 /* WorkoutCard.swift in Sources */,
 				D1BD96CC2A2152E40089D952 /* WorkoutView.swift in Sources */,
-				D1BD96C22A2143900089D952 /* WeeksClass.swift in Sources */,
 				D1BF4E9C2A21B58800FDA918 /* ExerciseClass.swift in Sources */,
 				D1BD96B62A20FD970089D952 /* MainTabView.swift in Sources */,
 				D1BD96A72A2074AB0089D952 /* UserProfileClass.swift in Sources */,

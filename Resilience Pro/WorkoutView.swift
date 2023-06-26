@@ -5,7 +5,12 @@
 //  Created by Francisco Alderete on 26/05/2023.
 //
 import SwiftUI
+import CloudKit
 
+struct Block {
+    let name: String
+    let content: [CKRecord.Reference]
+}
 
 struct WorkoutView: View {
     var workout: WorkoutModel
@@ -99,21 +104,24 @@ struct WorkoutView: View {
      }
 
     @ViewBuilder
-    func ExercisesView() -> some View {
-        VStack(spacing: 30) {
-            if blocksViewModel.isLoaded == false {
-                ProgressView()
-            } else {
-                let sortedBlocks = blocksViewModel.blocks.sorted { $0.name < $1.name }
-                ForEach(sortedBlocks, id: \.self) { block in
-                    BlockView(block: block)
-                }
-            }
-        }
-        .padding(.trailing, 5)
-        .padding(.leading, 5)
-        .padding(.bottom, 15)
-    }
+       func ExercisesView() -> some View {
+           let blocks: [Block] = [
+               Block(name: "Activación 1", content: workout.act_one),
+               Block(name: "Activación 2", content: workout.act_two),
+               Block(name: "Bloque 1", content: workout.block_one),
+               Block(name: "Bloque 2", content: workout.block_two),
+               Block(name: "Bloque 3", content: workout.block_three),
+               Block(name: "Bloque 4", content: workout.block_four)
+           ]
+           VStack(spacing: 30) {
+               ForEach(blocks, id: \.name) { block in
+                   BlockView(blockName: block.name, blockContent: block.content)
+               }
+           }
+           .padding(.trailing, 5)
+           .padding(.leading, 5)
+           .padding(.bottom, 15)
+       }
 
 
     @ViewBuilder

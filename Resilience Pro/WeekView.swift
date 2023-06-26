@@ -5,14 +5,17 @@
 //  Created by Francisco Alderete on 26/05/2023.
 //
 import SwiftUI
+import CloudKit
 
 struct WeekView: View {
-    var week: WeekModel
+    var weekName: String
+    var weekContent: [CKRecord.Reference] = []
     @ObservedObject var workoutsViewModel: WorkoutsViewModel
 
-    init(week: WeekModel) {
-        self.week = week
-        let workoutIds = week.workouts.map { $0.recordID }
+    init(weekContent: [CKRecord.Reference], weekName: String) {
+        self.weekName = weekName
+        self.weekContent = weekContent
+        let workoutIds = weekContent.map { $0.recordID }
         self.workoutsViewModel = WorkoutsViewModel(workoutIDs: workoutIds)
     }
 
@@ -33,7 +36,7 @@ struct WeekView: View {
                 .padding(.top, 50)
             }
         }
-        .navigationTitle(week.name)
+        .navigationTitle(weekName)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

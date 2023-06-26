@@ -19,6 +19,9 @@ struct ProgramModel: Hashable, CloudKitableProtocol {
     let image: CKAsset
     let difficulty: String
     var weeks: [CKRecord.Reference] = []
+    var week_one: [CKRecord.Reference] = []
+    var week_two: [CKRecord.Reference] = []
+    var week_three: [CKRecord.Reference] = []
     let record: CKRecord
     
     init?(record: CKRecord) {
@@ -27,7 +30,10 @@ struct ProgramModel: Hashable, CloudKitableProtocol {
             let imageAsset = record["image"] as? CKAsset,
             let description = record["description"] as? String,
             let difficulty = record["difficulty"] as? String,
-            let weeks = record["weeks"] as? [CKRecord.Reference]
+            let weeks = record["weeks"] as? [CKRecord.Reference],
+            let week_one = record["week_one"] as? [CKRecord.Reference],
+            let week_two = record["week_two"] as? [CKRecord.Reference],
+            let week_three = record["week_three"] as? [CKRecord.Reference]
         else {
             return nil
         }
@@ -37,46 +43,49 @@ struct ProgramModel: Hashable, CloudKitableProtocol {
         self.description = description
         self.difficulty = difficulty
         self.weeks = weeks
+        self.week_one = week_one
+        self.week_two = week_two
+        self.week_three = week_three
         self.record = record
     }
 
-    
-    init?(name: String, description: String, image: CKAsset, difficulty: String, weeks: [CKRecord.Reference] ) {
+    init?(name: String, description: String, image: CKAsset, difficulty: String, weeks: [CKRecord.Reference], week_one: [CKRecord.Reference], week_two: [CKRecord.Reference], week_three: [CKRecord.Reference]) {
         let record = CKRecord(recordType: "Programs")
         record["name"] = name
         record["description"] = description
         record["image"] = image
         record["difficulty"] = difficulty
         record["weeks"] = weeks
+        record["week_one"] = week_one
+        record["week_two"] = week_two
+        record["week_three"] = week_three
         self.init(record: record)
     }
-    
+
     func update(newName: String) -> ProgramModel? {
         let record = record
         record["name"] = newName
         return ProgramModel(record: record)
     }
-    
 }
 
 class ProgramsViewModel: ObservableObject {
-    
     @Published var text: String = ""
     @Published var programs: [ProgramModel] = []
     @Published var isLoaded: Bool = false
     var cancellables = Set<AnyCancellable>()
-    
+
     init() {
         fetchItems()
-    }    
-    
+    }
+
     func fetchItems() {
         let predicate = NSPredicate(value: true)
         let recordType = "Programs"
         CloudKitUtility.fetch(predicate: predicate, recordType: recordType)
             .receive(on: DispatchQueue.main)
             .sink { _ in
-                
+
             } receiveValue: { [weak self] returnedItems in
                 self?.programs = returnedItems
                 self?.isLoaded = true
@@ -84,4 +93,3 @@ class ProgramsViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 }
-

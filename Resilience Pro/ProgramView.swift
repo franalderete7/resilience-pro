@@ -6,19 +6,17 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct ProgramView: View {
     var program: ProgramModel
     var safeArea: EdgeInsets
     var size: CGSize
-    @ObservedObject var weeksViewModel: WeeksViewModel
 
     init(program: ProgramModel, safeArea: EdgeInsets, size: CGSize) {
         self.program = program
         self.safeArea = safeArea
         self.size = size
-        let weekIds = program.weeks.map { $0.recordID }
-        self.weeksViewModel = WeeksViewModel(weekIDs: weekIds)
     }
 
     var body: some View {
@@ -103,34 +101,42 @@ struct ProgramView: View {
     
     @ViewBuilder
     func WeeksView() -> some View {
-        if weeksViewModel.isLoaded == false {
-            ProgressView()
-        } else {
-            VStack(spacing: 20) {
-                ForEach(weeksViewModel.weeks.sorted(by: { $0.name < $1.name }), id: \.self) { week in
-                    NavigationLink(destination: WeekView(week: week)) {
-                        HStack(spacing: 10) {
-                            Text(week.name)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .frame(height: 50)
-                                .padding(14)
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(Color(.systemGray5))
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                                .padding(14)
-                        }
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
-                        .frame(width: UIScreen.main.bounds.width - 32, height: 50)
-                        .opacity(0.9)
-                    }
-                }
-                .padding(.top, 20)
-            }
-        }
-    }
+         let weeks: [(String, [CKRecord.Reference])] = [
+             ("Semana 1", program.week_one),
+             ("Semana 2", program.week_two),
+             ("Semana 3", program.week_three)
+         ]
+         
+         VStack(spacing: 40) {
+             ForEach(weeks, id: \.0) { weekName, weekContent in
+                 NavigationLink(
+                    destination: WeekView(weekContent: weekContent, weekName: weekName)
+                 ) {
+                     HStack(spacing: 10) {
+                         Text(weekName)
+                             .fontWeight(.semibold)
+                             .foregroundColor(.white)
+                             .frame(maxWidth: .infinity, alignment: .leading)
+                             .frame(height: 50)
+                             .padding(14)
+                         Image(systemName: "chevron.right")
+                             .foregroundColor(Color(.systemGray5))
+                             .frame(maxWidth: .infinity, alignment: .trailing)
+                             .padding(14)
+                     }
+                     .background(Color(.systemGray6))
+                     .cornerRadius(8)
+                     .frame(height: 50)
+                     .opacity(0.9)
+                 }
+             }
+         }
+         .padding(.trailing, 15)
+         .padding(.leading, 15)
+         .padding(.bottom, 25)
+         .padding(.top, 25)
+     }
+
 
 
     @ViewBuilder

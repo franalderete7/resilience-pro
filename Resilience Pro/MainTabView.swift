@@ -13,10 +13,6 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Programas", systemImage: "dumbbell.fill")
                 }
-            UploadExerciseView()
-                .tabItem {
-                    Label("Ejercicios", systemImage: "square.and.arrow.up")
-                }
             UserProfileView()
                 .tabItem {
                     Label("Perfil", systemImage: "person")
