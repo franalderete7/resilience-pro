@@ -11,18 +11,27 @@ struct BlockView: View {
     @State private var isExpanded: Bool = false
     var blockName: String
     var blockContent: [CKRecord.Reference] = []
+    var series: Int64
     @ObservedObject var exercisesViewModel: ExercisesViewModel
     
-    init(blockName: String, blockContent: [CKRecord.Reference]) {
+    init(blockName: String, blockContent: [CKRecord.Reference], series: Int64) {
         self.blockName = blockName
         self.blockContent = blockContent
+        self.series = series
         let exerciseIds = blockContent.map { $0.recordID }
         self.exercisesViewModel = ExercisesViewModel(exerciseIDs: exerciseIds)
     }
-
+    
     var body: some View {
-            VStack {
-                DisclosureGroup(isExpanded: $isExpanded) {
+        VStack {
+            DisclosureGroup(isExpanded: $isExpanded) {
+                VStack {
+                    Text("\(series) series")
+                        .font(.system(size: 12))
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 5)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
                     if exercisesViewModel.isLoaded {
                         if exercisesViewModel.exercises.isEmpty {
                             Text("No exercises found")
@@ -34,16 +43,18 @@ struct BlockView: View {
                     } else {
                         ProgressView()
                     }
-                } label: {
-                    Text(blockName)
-                        .fontWeight(.bold)
-                        .font(.system(size: 15))
                 }
+            } label: {
+                Text(blockName)
+                    .fontWeight(.bold)
+                    .font(.system(size: 15))
             }
-            .background(.black)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .frame(width: UIScreen.main.bounds.width - 32)
-            .opacity(0.9)
+
         }
+        .background(Color.black)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+        .frame(width: UIScreen.main.bounds.width - 32)
+        .opacity(0.9)
     }
+}

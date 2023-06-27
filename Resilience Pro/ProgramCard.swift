@@ -35,7 +35,7 @@ struct ProgramCard: View {
                     .cornerRadius(4)
                     .offset(x: 10, y: -165)
                 
-                Text("\(program.weeks.count) SEMANAS")
+                Text("\(program.week_count) SEMANAS")
                     .font(.system(size: 11))
                     .fontWeight(.bold)
                     .foregroundColor(Color(UIColor.systemGray))

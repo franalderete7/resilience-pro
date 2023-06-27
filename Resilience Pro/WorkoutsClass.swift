@@ -25,6 +25,7 @@ struct WorkoutModel: Hashable, CloudKitableProtocol {
     var block_two: [CKRecord.Reference] = []
     var block_three: [CKRecord.Reference] = []
     var block_four: [CKRecord.Reference] = []
+    var series: [Int64] = []
     let record: CKRecord
     
     init?(record: CKRecord) {
@@ -39,7 +40,8 @@ struct WorkoutModel: Hashable, CloudKitableProtocol {
             let block_one = record["block_one"] as? [CKRecord.Reference],
             let block_two = record["block_two"] as? [CKRecord.Reference],
             let block_three = record["block_three"] as? [CKRecord.Reference],
-            let block_four = record["block_four"] as? [CKRecord.Reference]
+            let block_four = record["block_four"] as? [CKRecord.Reference],
+            let series = record["series"] as? [Int64]
         else {
             return nil
         }
@@ -55,10 +57,11 @@ struct WorkoutModel: Hashable, CloudKitableProtocol {
         self.block_two = block_two
         self.block_three = block_three
         self.block_four = block_four
+        self.series = series
         self.record = record
     }
     
-    init?(name: String, description: String, difficulty: String, image: CKAsset?, blocks: [CKRecord.Reference], act_one: [CKRecord.Reference], act_two: [CKRecord.Reference], block_one: [CKRecord.Reference], block_two: [CKRecord.Reference], block_three: [CKRecord.Reference], block_four: [CKRecord.Reference]) {
+    init?(name: String, description: String, difficulty: String, image: CKAsset?, blocks: [CKRecord.Reference], act_one: [CKRecord.Reference], act_two: [CKRecord.Reference], block_one: [CKRecord.Reference], block_two: [CKRecord.Reference], block_three: [CKRecord.Reference], block_four: [CKRecord.Reference], series: [Int64]) {
         let record = CKRecord(recordType: "Workouts")
         record["name"] = name
         record["description"] = description
@@ -71,6 +74,7 @@ struct WorkoutModel: Hashable, CloudKitableProtocol {
         record["block_two"] = block_two
         record["block_three"] = block_three
         record["block_four"] = block_four
+        record["series"] = series
         self.init(record: record)
     }
 }

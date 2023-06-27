@@ -19,6 +19,7 @@ struct ProgramModel: Hashable, CloudKitableProtocol {
     let image: CKAsset
     let difficulty: String
     var weeks: [CKRecord.Reference] = []
+    let week_count: Int
     var week_one: [CKRecord.Reference] = []
     var week_two: [CKRecord.Reference] = []
     var week_three: [CKRecord.Reference] = []
@@ -31,6 +32,7 @@ struct ProgramModel: Hashable, CloudKitableProtocol {
             let description = record["description"] as? String,
             let difficulty = record["difficulty"] as? String,
             let weeks = record["weeks"] as? [CKRecord.Reference],
+            let week_count = record["week_count"] as? Int,
             let week_one = record["week_one"] as? [CKRecord.Reference],
             let week_two = record["week_two"] as? [CKRecord.Reference],
             let week_three = record["week_three"] as? [CKRecord.Reference]
@@ -43,19 +45,21 @@ struct ProgramModel: Hashable, CloudKitableProtocol {
         self.description = description
         self.difficulty = difficulty
         self.weeks = weeks
+        self.week_count = week_count
         self.week_one = week_one
         self.week_two = week_two
         self.week_three = week_three
         self.record = record
     }
 
-    init?(name: String, description: String, image: CKAsset, difficulty: String, weeks: [CKRecord.Reference], week_one: [CKRecord.Reference], week_two: [CKRecord.Reference], week_three: [CKRecord.Reference]) {
+    init?(name: String, description: String, image: CKAsset, difficulty: String, weeks: [CKRecord.Reference], week_count: Int, week_one: [CKRecord.Reference], week_two: [CKRecord.Reference], week_three: [CKRecord.Reference]) {
         let record = CKRecord(recordType: "Programs")
         record["name"] = name
         record["description"] = description
         record["image"] = image
         record["difficulty"] = difficulty
         record["weeks"] = weeks
+        record["week_count"] = week_count
         record["week_one"] = week_one
         record["week_two"] = week_two
         record["week_three"] = week_three
@@ -89,6 +93,7 @@ class ProgramsViewModel: ObservableObject {
             } receiveValue: { [weak self] returnedItems in
                 self?.programs = returnedItems
                 self?.isLoaded = true
+                print(returnedItems)
             }
             .store(in: &cancellables)
     }

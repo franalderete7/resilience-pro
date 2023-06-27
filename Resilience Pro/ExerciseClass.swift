@@ -94,7 +94,6 @@ class ExercisesViewModel: ObservableObject {
             }) { [weak self] (returnedItems: [ExerciseModel]) in
                 self?.exercises = returnedItems
                 self?.isLoaded = true
-                print(returnedItems)
             }
             .store(in: &cancellables)
     }

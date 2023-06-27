@@ -10,20 +10,18 @@ import CloudKit
 struct Block {
     let name: String
     let content: [CKRecord.Reference]
+    let series: Int64
 }
 
 struct WorkoutView: View {
     var workout: WorkoutModel
     var safeArea: EdgeInsets
     var size: CGSize
-    @ObservedObject var blocksViewModel: BlocksViewModel
 
     init(workout: WorkoutModel, safeArea: EdgeInsets, size: CGSize) {
         self.workout = workout
         self.safeArea = safeArea
         self.size = size
-        let blockIds = workout.blocks.map { $0.recordID }
-        self.blocksViewModel = BlocksViewModel(blockIDs: blockIds)
     }
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -106,16 +104,16 @@ struct WorkoutView: View {
     @ViewBuilder
        func ExercisesView() -> some View {
            let blocks: [Block] = [
-               Block(name: "Activación 1", content: workout.act_one),
-               Block(name: "Activación 2", content: workout.act_two),
-               Block(name: "Bloque 1", content: workout.block_one),
-               Block(name: "Bloque 2", content: workout.block_two),
-               Block(name: "Bloque 3", content: workout.block_three),
-               Block(name: "Bloque 4", content: workout.block_four)
-           ]
+                       Block(name: "Activación 1", content: workout.act_one, series: workout.series[0]),
+                       Block(name: "Activación 2", content: workout.act_two, series: workout.series[1]),
+                       Block(name: "Bloque 1", content: workout.block_one, series: workout.series[2]),
+                       Block(name: "Bloque 2", content: workout.block_two, series: workout.series[3]),
+                       Block(name: "Bloque 3", content: workout.block_three, series: workout.series[4]),
+                       Block(name: "Bloque 4", content: workout.block_four, series: workout.series[5])
+                   ]
            VStack(spacing: 30) {
                ForEach(blocks, id: \.name) { block in
-                   BlockView(blockName: block.name, blockContent: block.content)
+                   BlockView(blockName: block.name, blockContent: block.content, series: block.series)
                }
            }
            .padding(.trailing, 5)
